@@ -22,6 +22,7 @@
 		<glassfish.domain.name>domain1</glassfish.domain.name>
 		<glassfish.domain.host>localhost</glassfish.domain.host>
 		<glassfish.domain.adminPort>4848</glassfish.domain.adminPort>
+	 <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
 	</properties>
 
 	<dependencies>

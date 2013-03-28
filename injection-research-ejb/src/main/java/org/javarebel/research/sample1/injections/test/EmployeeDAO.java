@@ -13,11 +13,11 @@ import org.javarebel.research.sample1.injections.Managed;
 @Managed
 public class EmployeeDAO extends AbstractDAO {
 	
-	@JNDIResource("jdbc/SOAAFCU")
+	@JNDIResource("java:/AFCUSOA")
 	private DataSource ds;
 	
 	@Inject
-	@Database("jdbc/SOAAFCU")
+	@Database("java:/AFCUSOA")
 	private DataSource fds;
 	
 	@Inject

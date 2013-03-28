@@ -45,10 +45,8 @@ public class DatasourceAnnotationVisitor extends AnnotationVisitor {
 				System.out.println("After setting value of ds is ==> " + target);
 			}
 		} catch (SecurityException | IllegalArgumentException
-				| IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
-			System.out.println( e.getMessage());
-			throw new RuntimeException(e.getMessage(), e);
-		} catch (NoSuchFieldException e) {
+				| IllegalAccessException | InvocationTargetException 
+                                | NoSuchMethodException | NoSuchFieldException e) {
 			System.out.println( e.getMessage());
 			throw new RuntimeException(e.getMessage(), e);
 		} finally {
