@@ -16,11 +16,11 @@ public class ConversationScopeTest implements Serializable {
 
 	@Produces
 	@Named
-	public User user = new User();
+	private User user = new User();
 	
 	@Produces
 	@Named
-	public Login login = new Login();
+	private Login login = new Login();
 	
 	@Inject
 	private Conversation conversation;
@@ -28,17 +28,17 @@ public class ConversationScopeTest implements Serializable {
 	public String saveLogin() {
 		conversation.begin();
 		System.out.println("Login Information : \n" + login);
-		return "userInfo.faces";
+		return "userInfo.xhtml";
 	}
 	
 	public String saveUser() {
 		System.out.println("User Information : \n" + user);
-		return "confirm.faces";
+		return "confirm.xhtml";
 	}
 	
 	public String createAccount() {
 		System.out.println("Creating account.");
 		conversation.end();
-		return "result.faces";
+		return "result.xhtml";
 	}
 }

@@ -29,6 +29,11 @@
 			<type>ejb</type>
 			<scope>provided</scope>
 		</dependency>
+                <dependency>
+			<groupId>org.javarebel.research</groupId>
+			<artifactId>injection-research-utils</artifactId>
+			<version>1.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -21,4 +21,8 @@
     <welcome-file-list>
         <welcome-file>faces/index.xhtml</welcome-file>
     </welcome-file-list>
+    
+    <absolute-ordering>
+        <name>Common_Template_Resolver</name>
+    </absolute-ordering>
 </web-app>

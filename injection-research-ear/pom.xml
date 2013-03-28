@@ -37,12 +37,6 @@
 			<version>1.0</version>
 			<type>ejb</type>
 		</dependency>
-		<dependency>
-			<groupId>org.javarebel.research</groupId>
-			<artifactId>injection-research-utils</artifactId>
-			<version>1.0</version>
-			<type>jar</type>
-		</dependency>
 	</dependencies>
 
 	<build>
@@ -73,10 +67,6 @@
 							<groupId>org.javarebel.research</groupId>
 							<artifactId>injection-research-ejb</artifactId>
 						</ejbModule>
-						<jarModule>
-							<groupId>org.javarebel.research</groupId>
-							<artifactId>injection-research-utils</artifactId>
-						</jarModule>
 					</modules>
 				</configuration>
 			</plugin>
