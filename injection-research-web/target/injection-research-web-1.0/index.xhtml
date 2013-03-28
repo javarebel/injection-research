@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+	<ui:composition template="/template.xhtml">
+    <ui:define name="title">JEE6 Researches</ui:define>
+        <ui:define name="head">JEE6 Researches</ui:define>
+        <ui:define name="content">
+	    	<h:messages />
+	        <h:form styleClass="form" id="form1">
+				First Name : <h:inputText styleClass="inputText" id="text1" value="#{test.fname }"></h:inputText><br/>
+				Last Name  : <h:inputText styleClass="inputText" id="text2" value="#{test.lname }"></h:inputText>
+				<h:commandButton type="submit" value="Save"
+					styleClass="commandButton" id="button1" action="#{test.saveEmployee }"></h:commandButton>
+				<br/>
+				<h:outputText styleClass="outputText" id="text3" value="#{test.message }"></h:outputText>
+				<br/><br/>
+				Actions: <h:selectOneMenu value="#{ajax.selectedAction}">
+					<f:selectItems value="#{ajax.actionNames}" />
+				</h:selectOneMenu>
+				<h:commandButton type="submit" value="Process Action"
+					styleClass="commandButton" id="button2" action="#{ajax.processAction }"></h:commandButton>
+			</h:form>
+	    </ui:define>
+    </ui:composition>
+</html>
+

@@ -1,0 +1,12 @@
+org\javarebel\research\sample1\injections\test\EmployeeDAO.class
+org\javarebel\research\sample1\dao\Database.class
+org\javarebel\research\sample1\injections\Managed.class
+org\javarebel\research\sample1\injections\DatasourceAnnotationVisitor.class
+org\javarebel\research\sample1\injections\AnnotationHandlerImpl.class
+org\javarebel\research\sample1\dao\DatasourceFactory.class
+org\javarebel\research\sample1\injections\JNDIResource.class
+org\javarebel\research\sample1\injections\AnnotationVisitor.class
+org\javarebel\research\sample1\injections\AnnotationHandler.class
+org\javarebel\research\sample1\ejb\EmployeeManager.class
+org\javarebel\research\sample1\injections\test\AbstractDAO.class
+org\javarebel\research\sample1\injections\InjectionInterceptor.class
