@@ -3,7 +3,6 @@
     <persistence-unit name="AFCU_EM">
         <jta-data-source>java:/AFCUSOA</jta-data-source>
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
-        <class>org.javarebel.research.sample1.entity.User</class>
         <properties>
             <property name="hibernate.show_sql"
                   value="true" />
