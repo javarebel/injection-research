@@ -16,13 +16,12 @@
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<glassfish.directory>/Users/naveensisupalan/Library/GlassFish_Server</glassfish.directory>
+		<glassfish.directory>C:/Softwares/glassfish-3.1.1</glassfish.directory>
 		<glassfish.user>admin</glassfish.user>
-		<glassfish.adminPassword>admin</glassfish.adminPassword>
+		<glassfish.adminPassword>adminadmin</glassfish.adminPassword>
 		<glassfish.domain.name>domain1</glassfish.domain.name>
 		<glassfish.domain.host>localhost</glassfish.domain.host>
 		<glassfish.domain.adminPort>4848</glassfish.domain.adminPort>
-	 <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
 	</properties>
 
 	<dependencies>
@@ -81,21 +80,9 @@
 				<configuration>
 					<echo>true</echo>
 					<user>admin</user>
+                                         <user>admin</user>
+                                         <adminPassword>adminadmin</adminPassword>
 					<glassfishDirectory>${glassfish.directory}</glassfishDirectory>
-					<domainDirectory>${glassfish.directory}/glassfish/domains/</domainDirectory>
-					<passwordFile>${basedir}/glassfishpasswordfile</passwordFile>
-					<domain>
-						<name>DummyDemoDomain</name>
-						<adminPort>4848</adminPort>
-						<httpPort>8080</httpPort>
-						<httpsPort>8443</httpsPort>
-					</domain>
-					<components>
-						<component>
-							<name>research</name>
-							<artifact>target/${project.build.finalName}.ear</artifact>
-						</component>
-					</components>
 				</configuration>
 			</plugin>
 
