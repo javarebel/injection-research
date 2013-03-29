@@ -13,6 +13,10 @@
     <version>1.0</version>
     <name>injection-research-ejb</name>
     <url>http://maven.apache.org</url>
+    
+    <properties>
+        <AFCUSOA.JNDI>java:/AFCUSOA</AFCUSOA.JNDI>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -67,14 +71,22 @@
                 <groupId>com.google.code.maven-replacer-plugin</groupId>
                 <artifactId>replacer</artifactId>
                 <version>1.5.0</version>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>replace</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
                     <includes>
-                        <include>src/**/*.java</include>
+                        <include>target/classes/META-INF/persistence.xml</include>
                     </includes>
                     <replacements>
                         <replacement>
                             <token>DATASOURCE_JNDI</token>
-                            <value>${datasource.jndi}</value>
+                            <value>${AFCUSOA.JNDI}</value>
                         </replacement>
                     </replacements>
                 </configuration>
@@ -86,14 +98,21 @@
         <profile>
             <id>GF</id>
             <properties>
-                <datasource.jndi>jdbc/SOAAFCU</datasource.jndi>
+                <AFCUSOA.JNDI>jdbc/AFCUSOA</AFCUSOA.JNDI>
             </properties>
         </profile>
 
         <profile>
             <id>JBOSS</id>
             <properties>
-                <datasource.jndi>java:/jdbc/SOAAFCU</datasource.jndi>
+                <AFCUSOA.JNDI>java:/AFCUSOA</AFCUSOA.JNDI>
+            </properties>
+        </profile>
+        
+        <profile>
+            <id>IBM</id>
+            <properties>
+                <AFCUSOA.JNDI>jdbc/AFCUSOA</AFCUSOA.JNDI>
             </properties>
         </profile>
     </profiles>
