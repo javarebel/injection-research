@@ -1,0 +1,16 @@
+/* 
+    Document   : styles
+    Created on : Mar 28, 2013, 10:49:45 PM
+    Author     : naveen
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+label {
+    font-weight: bold;
+}
+

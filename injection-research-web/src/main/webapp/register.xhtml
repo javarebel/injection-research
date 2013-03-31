@@ -9,8 +9,8 @@
 	        <ui:define name="content">
 		    	<h:messages />
 		        <h:form styleClass="form" id="form1">
-                            UserName: <h:inputText value="#{login.username}" id="userName" /><br/>
-                            Password: <h:inputSecret value="#{login.password}" id="password" /><br/>
+                            <label>UserName:</label> <h:inputText value="#{login.username}" id="userName" /><br/>
+                            <label>Password:</label> <h:inputSecret value="#{login.password}" id="password" /><br/>
                             <h:commandButton value="Register" id="registerBtn" action="#{convTest.saveLogin()}" />
 		        </h:form>
 	    </ui:define>

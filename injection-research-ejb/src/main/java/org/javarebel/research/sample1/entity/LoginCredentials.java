@@ -6,6 +6,7 @@ package org.javarebel.research.sample1.entity;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -29,9 +31,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "LoginCredentials.findAll", query = "SELECT l FROM LoginCredentials l"),
     @NamedQuery(name = "LoginCredentials.findByUsername", query = "SELECT l FROM LoginCredentials l WHERE l.username = :username"),
-    @NamedQuery(name = "LoginCredentials.findByPassword", query = "SELECT l FROM LoginCredentials l WHERE l.password = :password"),
-    @NamedQuery(name = "LoginCredentials.findByUserid", query = "SELECT l FROM LoginCredentials l WHERE l.userid = :userid")})
+    @NamedQuery(name = "LoginCredentials.findByPassword", query = "SELECT l FROM LoginCredentials l WHERE l.password = :password")})
 public class LoginCredentials implements Serializable {
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "loginCredentials")
+    private UserInfo userInfo;
     private static final long serialVersionUID = 1L;
     @Size(max = 2147483647)
     @Column(name = "username")
@@ -42,16 +45,16 @@ public class LoginCredentials implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "userid")
+    @Column(name = "loginid")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "login_userid_seq")
     @SequenceGenerator(name="login_userid_seq",sequenceName = "login_userid_seq", allocationSize = 1)
-    private Integer userid;
+    private Integer loginid;
 
     public LoginCredentials() {
     }
 
-    public LoginCredentials(Integer userid) {
-        this.userid = userid;
+    public LoginCredentials(Integer loginid) {
+        this.loginid = loginid;
     }
 
     public String getUsername() {
@@ -70,18 +73,18 @@ public class LoginCredentials implements Serializable {
         this.password = password;
     }
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getLoginid() {
+        return loginid;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setLoginid(Integer loginid) {
+        this.loginid = loginid;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (userid != null ? userid.hashCode() : 0);
+        hash += (loginid != null ? loginid.hashCode() : 0);
         return hash;
     }
 
@@ -92,7 +95,7 @@ public class LoginCredentials implements Serializable {
             return false;
         }
         LoginCredentials other = (LoginCredentials) object;
-        if ((this.userid == null && other.userid != null) || (this.userid != null && !this.userid.equals(other.userid))) {
+        if ((this.loginid == null && other.loginid != null) || (this.loginid != null && !this.loginid.equals(other.loginid))) {
             return false;
         }
         return true;
@@ -100,7 +103,15 @@ public class LoginCredentials implements Serializable {
 
     @Override
     public String toString() {
-        return "org.javarebel.research.sample1.entity.LoginCredentials[ userid=" + userid + " ]";
+        return "org.javarebel.research.sample1.entity.LoginCredentials[ userid=" + loginid + " ]";
+    }
+
+    public UserInfo getUserInfo() {
+        return userInfo;
+    }
+
+    public void setUserInfo(UserInfo userInfo) {
+        this.userInfo = userInfo;
     }
     
 }
