@@ -1,4 +1,8 @@
 /injection-research-commons/target/
+/injection-research-ear/target/
+/injection-research-ejb/target/
+/injection-research-utils/target/
+/injection-research-web/target/
 *.ear
 *.war
 *.jar
