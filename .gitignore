@@ -1,1 +1,4 @@
 /injection-research-commons/target/
+*.ear
+*.war
+*.jar
