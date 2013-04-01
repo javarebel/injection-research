@@ -11,7 +11,9 @@ package org.javarebel.research.commons.dao;
  */
 public class AirFrameworkDAOException extends Exception {
 
-    public AirFrameworkDAOException() {
+	private static final long serialVersionUID = 24302573161146430L;
+
+	public AirFrameworkDAOException() {
     }
 
     public AirFrameworkDAOException(String message) {

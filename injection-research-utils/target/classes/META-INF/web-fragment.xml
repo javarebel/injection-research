@@ -1,9 +1,0 @@
-<web-fragment metadata-complete="true" version="3.0"
-	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-fragment_3_0.xsd">
-	<name>Common_Template_Resolver</name>
-	<context-param>
-		<param-name>javax.faces.FACELETS_RESOURCE_RESOLVER</param-name>
-		<param-value>org.javarebel.research.RemoteTemplateResolver</param-value>
-	</context-param>
-</web-fragment>

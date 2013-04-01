@@ -13,7 +13,8 @@ import javax.enterprise.inject.spi.InjectionPoint;
  */
 public class CommonDAOFactory {
     
-    public static <T> T getDAO(InjectionPoint ip) {
+    @SuppressWarnings("unchecked")
+	public static <T> T getDAO(InjectionPoint ip) {
         Field fld = (Field)ip.getMember();
         Class<?> daoClass = fld.getType();
         Object obj = DAOProxyfier.getInstance(daoClass);

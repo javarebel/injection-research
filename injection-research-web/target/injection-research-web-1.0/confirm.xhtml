@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+	<ui:composition template="/template.xhtml">
+	    <ui:define name="title">Confirm</ui:define>
+	        <ui:define name="head">Provide Confirm Your Information</ui:define>
+	        <ui:define name="content">
+		    	<h:messages />
+		        <h:form styleClass="form" id="form1">
+                            UserName: #{login.username}<br/>
+                            First Name: #{login.userInfo.fname}<br/>
+                            Last Name: #{login.userInfo.lname}<br/>
+                            Address:#{login.userInfo.address}, #{login.userInfo.state}<br/>
+                            Phone:#{login.userInfo.phone}<br/>
+                            <h:commandButton id="confirmBtn" value="Confirm" action="#{convTest.createAccount()}" />
+		        </h:form>
+	    </ui:define>
+	</ui:composition>
+</html>
